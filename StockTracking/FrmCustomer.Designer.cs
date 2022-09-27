@@ -31,7 +31,7 @@ namespace StockTracking
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -55,13 +55,14 @@ namespace StockTracking
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtCategoryName
+            // txtCustomerName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(116, 53);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(100, 20);
-            this.txtCategoryName.TabIndex = 5;
+            this.txtCustomerName.Location = new System.Drawing.Point(116, 53);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomerName.TabIndex = 5;
             // 
             // lblCustomerName
             // 
@@ -78,7 +79,7 @@ namespace StockTracking
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(241, 214);
-            this.Controls.Add(this.txtCategoryName);
+            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.lblCustomerName);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
@@ -94,7 +95,7 @@ namespace StockTracking
 
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtCategoryName;
+        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label lblCustomerName;
     }
 }

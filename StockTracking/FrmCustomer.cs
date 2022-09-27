@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StockTracking.BLL;
+using StockTracking.DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,26 @@ namespace StockTracking
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        CustomerBLL bll = new CustomerBLL();
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtCustomerName.Text.Trim() == "")
+            {
+                MessageBox.Show("El nombre del cliente esta vacio");
+            }
+            else
+            {
+                CustomerDetailDTO customer = new CustomerDetailDTO();
+                customer.CustomerName = txtCustomerName.Text;
+
+                if (bll.Insert(customer))
+                {
+                    MessageBox.Show("El cliente a sido agregado correctamente");
+                    txtCustomerName.Clear();
+                }
+            }
         }
     }
 }
