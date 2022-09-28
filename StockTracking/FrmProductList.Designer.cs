@@ -33,9 +33,9 @@ namespace StockTracking
             this.button1 = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.gpbStock = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbLessStock = new System.Windows.Forms.RadioButton();
+            this.rbMoreStock = new System.Windows.Forms.RadioButton();
+            this.rbEqualStock = new System.Windows.Forms.RadioButton();
             this.gpbPrice = new System.Windows.Forms.GroupBox();
             this.rbLessPrice = new System.Windows.Forms.RadioButton();
             this.rbMorePrice = new System.Windows.Forms.RadioButton();
@@ -91,6 +91,7 @@ namespace StockTracking
             this.button1.TabIndex = 7;
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSearch
             // 
@@ -101,12 +102,13 @@ namespace StockTracking
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Buscar";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // gpbStock
             // 
-            this.gpbStock.Controls.Add(this.radioButton1);
-            this.gpbStock.Controls.Add(this.radioButton2);
-            this.gpbStock.Controls.Add(this.radioButton3);
+            this.gpbStock.Controls.Add(this.rbLessStock);
+            this.gpbStock.Controls.Add(this.rbMoreStock);
+            this.gpbStock.Controls.Add(this.rbEqualStock);
             this.gpbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbStock.Location = new System.Drawing.Point(517, 52);
             this.gpbStock.Name = "gpbStock";
@@ -115,38 +117,38 @@ namespace StockTracking
             this.gpbStock.TabStop = false;
             this.gpbStock.Text = "Stock";
             // 
-            // radioButton1
+            // rbLessStock
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(130, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Menor";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbLessStock.AutoSize = true;
+            this.rbLessStock.Location = new System.Drawing.Point(130, 19);
+            this.rbLessStock.Name = "rbLessStock";
+            this.rbLessStock.Size = new System.Drawing.Size(60, 17);
+            this.rbLessStock.TabIndex = 2;
+            this.rbLessStock.TabStop = true;
+            this.rbLessStock.Text = "Menor";
+            this.rbLessStock.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbMoreStock
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(65, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Mayor";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbMoreStock.AutoSize = true;
+            this.rbMoreStock.Location = new System.Drawing.Point(65, 19);
+            this.rbMoreStock.Name = "rbMoreStock";
+            this.rbMoreStock.Size = new System.Drawing.Size(59, 17);
+            this.rbMoreStock.TabIndex = 1;
+            this.rbMoreStock.TabStop = true;
+            this.rbMoreStock.Text = "Mayor";
+            this.rbMoreStock.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbEqualStock
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 19);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 17);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Igual";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbEqualStock.AutoSize = true;
+            this.rbEqualStock.Location = new System.Drawing.Point(6, 19);
+            this.rbEqualStock.Name = "rbEqualStock";
+            this.rbEqualStock.Size = new System.Drawing.Size(53, 17);
+            this.rbEqualStock.TabIndex = 0;
+            this.rbEqualStock.TabStop = true;
+            this.rbEqualStock.Text = "Igual";
+            this.rbEqualStock.UseVisualStyleBackColor = true;
             // 
             // gpbPrice
             // 
@@ -254,6 +256,7 @@ namespace StockTracking
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(132, 20);
             this.txtProductName.TabIndex = 0;
+            this.txtProductName.TextChanged += new System.EventHandler(this.txtProductName_TextChanged);
             // 
             // lblProductName
             // 
@@ -329,6 +332,7 @@ namespace StockTracking
             // 
             // dgvProductList
             // 
+            this.dgvProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductList.Location = new System.Drawing.Point(0, 160);
@@ -348,6 +352,7 @@ namespace StockTracking
             this.Name = "FrmProductList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Productos";
+            this.Load += new System.EventHandler(this.FrmProductList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gpbStock.ResumeLayout(false);
@@ -381,9 +386,9 @@ namespace StockTracking
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox gpbStock;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbLessStock;
+        private System.Windows.Forms.RadioButton rbMoreStock;
+        private System.Windows.Forms.RadioButton rbEqualStock;
         private System.Windows.Forms.GroupBox gpbPrice;
         private System.Windows.Forms.RadioButton rbLessPrice;
         private System.Windows.Forms.RadioButton rbMorePrice;
