@@ -40,15 +40,15 @@ namespace StockTracking
             // 
             this.panel1.Controls.Add(this.btnOk);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 266);
+            this.panel1.Location = new System.Drawing.Point(0, 309);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(386, 69);
+            this.panel1.Size = new System.Drawing.Size(528, 69);
             this.panel1.TabIndex = 0;
             // 
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(144, 15);
+            this.btnOk.Location = new System.Drawing.Point(214, 15);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(93, 42);
             this.btnOk.TabIndex = 2;
@@ -63,19 +63,20 @@ namespace StockTracking
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(386, 266);
+            this.dataGridView1.Size = new System.Drawing.Size(528, 309);
             this.dataGridView1.TabIndex = 1;
             // 
             // FrmStockAlert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 335);
+            this.ClientSize = new System.Drawing.Size(528, 378);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmStockAlert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmStockAlert";
+            this.Load += new System.EventHandler(this.FrmStockAlert_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
