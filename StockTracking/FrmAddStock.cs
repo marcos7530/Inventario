@@ -78,7 +78,7 @@ namespace StockTracking
         {
             if (txtProductName.Text.Trim() == "")
             {
-                MessageBox.Show("Pro favor seleccione un producto de la tabla");
+                MessageBox.Show("Por favor seleccione un producto de la tabla");
             }
             else if (txtStockProduct.Text.Trim()=="")
             {

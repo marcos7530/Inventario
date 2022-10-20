@@ -415,6 +415,7 @@ namespace StockTracking
             this.Name = "FrmSalesList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado De Ventas";
+            this.Load += new System.EventHandler(this.FrmSalesList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.gpbStock.ResumeLayout(false);

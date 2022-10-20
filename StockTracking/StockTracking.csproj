@@ -59,6 +59,7 @@
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\IBLL.cs" />
     <Compile Include="BLL\ProductBLL.cs" />
+    <Compile Include="BLL\SalesBLL.cs" />
     <Compile Include="DAL\CATEGORY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -68,6 +69,7 @@
     <Compile Include="DAL\DAO\CategoryDAO.cs" />
     <Compile Include="DAL\DAO\CustomerDAO.cs" />
     <Compile Include="DAL\DAO\ProductDAO.cs" />
+    <Compile Include="DAL\DAO\SalesDAO.cs" />
     <Compile Include="DAL\DAO\StockContext.cs" />
     <Compile Include="DAL\DTO\CategoryDetailDTO.cs" />
     <Compile Include="DAL\DTO\CategoryDTO.cs" />
@@ -75,6 +77,8 @@
     <Compile Include="DAL\DTO\CustomerDTO.cs" />
     <Compile Include="DAL\DTO\ProductDetailDTO.cs" />
     <Compile Include="DAL\DTO\ProductDTO.cs" />
+    <Compile Include="DAL\DTO\SalesDetailDTO.cs" />
+    <Compile Include="DAL\DTO\SalesDTO.cs" />
     <Compile Include="DAL\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
